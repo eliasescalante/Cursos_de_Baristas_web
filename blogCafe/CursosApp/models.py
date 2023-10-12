@@ -13,15 +13,6 @@ class Alumno(models.Model):
     gustos = models.CharField(max_length=40)
 
 
-class Tutor(models.Model):
-
-    #modelo de tutor
-
-    nombre = models.CharField(max_length=60)
-    apellido = models.CharField(max_length=60)
-    edad = models.IntegerField()
-    email = models.EmailField()
-
 class Curso(models.Model):
 
     #modelo de curso
