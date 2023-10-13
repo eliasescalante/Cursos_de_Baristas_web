@@ -17,7 +17,7 @@ class Curso(models.Model):
 
     #modelo de curso
 
-    curso = models.CharField(max_length=40)
+    nombre = models.CharField(max_length=40)
     tutor = models.CharField(max_length=40)
     cupo = models.IntegerField()
     fecha = models.DateField()

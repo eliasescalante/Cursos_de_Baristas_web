@@ -3,14 +3,36 @@
 
 {% block section1 %}
 
-
+{% if  request.user.is_authenticated %}
 <br>
     <center>
         <h2>Debes iniciar sesión...</h2>
     </center>
     
 <br>
+{% endif %}
+{% if not request.user.is_authenticated %}
+    <body>
+        <br>
+        <br>
+        <br>
+        <br>
 
+            <center>
+                <h1> Cursos de Cafe - Barista</h1>
+                <ul>
+                    {% for curso in cursos %}
+                    <br>
+                    <p> Nombre del curso: {{curso.nombre}}</p>
+                    <p>
+                        <a href="{% url 'Detalle' curso.id %}">Detalle</a>
+                    </p>
+                    <br>
+                    {% endfor %}
+                </ul>
+            </center>
+    </body>
+{% endif %}
 
 
 
