@@ -4,7 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from User.forms import  UserRegisterForm
 
-
+#esta funcionando esto 
 
 # Create your views here.
 def login_request(request):
