@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import  DetailView
 from .models import *
 # Create your views here.
 
@@ -33,5 +33,6 @@ class CursoDetalle(DetailView):
     
     model=Curso
     template_name='CursosApp/curso_detalle.html'
+
 
 

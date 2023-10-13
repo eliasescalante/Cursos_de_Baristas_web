@@ -1,6 +1,8 @@
 {% extends "CursosApp/base.html"%}
 {% load static %}
 
+{% block title %} Cursos {% endblock title %}
+
 {% block section1 %}
 
 {% if not request.user.is_authenticated %}

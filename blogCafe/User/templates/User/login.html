@@ -1,0 +1,34 @@
+{% extends 'CursosApp/base.html' %}
+
+{% load static %}
+
+{% block title %} Login {% endblock title %}
+
+{% block main %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>
+        <form action="" method="POST">
+
+            {% csrf_token %}
+    
+            {{form.as_p}}
+    
+            <button type="submit"> Iniciar Sesión</button>
+        </form>
+    </center>
+    </br>
+    </br>
+    </br>
+
+
+  
+
+    
+{% endblock main %}
