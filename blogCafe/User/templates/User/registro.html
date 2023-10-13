@@ -4,7 +4,7 @@
 
 {% block title %} Registrarse {% endblock title %}
 
-{% block main %}
+{% block section1 %}
 
     {# Este div sólo está agregado para centrar el formulario en la página usando Bootstrap #}
     <div class="d-flex justify-content-center">
@@ -13,17 +13,18 @@
         <div class="d-flex flex-column">
 
             {# Mensaje personalizado en la vista de Login con estilos de Bootstrap #}
-            <p class="fs-5 fw-bold">{{ msg_register }}</p>
+            <p class="fs-5 fw-bold"></p>
 
             <form action="" method="POST">
                 {% csrf_token %}
-                
                 {{ form.as_p }}
+                <br>
                 <input type="submit" value="Registrarse">
+            
 
             </form>
-
+        </br>
         </div>
     </div>
     
-{% endblock main %}
+{% endblock %}
