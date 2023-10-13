@@ -21,5 +21,8 @@ class Curso(models.Model):
     tutor = models.CharField(max_length=40)
     cupo = models.IntegerField()
     fecha = models.DateField()
+    imagen = models.ImageField(upload_to="cursos",null=True)
     
+    def _str__(self):
+        return self.nombre
     
