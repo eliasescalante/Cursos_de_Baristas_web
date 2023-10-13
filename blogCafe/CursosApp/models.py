@@ -6,6 +6,7 @@ class Alumno(models.Model):
 
     # modelo de alumno
 
+    usuario = models.CharField(max_length=40,null=True)
     nombre = models.CharField(max_length=40)
     apellido = models.CharField(max_length=40)
     email = models.EmailField()
