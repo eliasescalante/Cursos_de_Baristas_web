@@ -9,7 +9,8 @@ def inicio(request):
     #pagina de inicio
     return render(request, 'CursosApp/index.html')
 
-def cursos(request):
+def cursos(request): 
+    #pagina de curso
     return render(request, 'CursosApp/cursos.html')
 
 def estudiantes(request):

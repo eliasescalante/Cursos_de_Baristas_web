@@ -10,4 +10,5 @@ urlpatterns = [
     path('nosotros', views.nosotros,name="Nosotros"),
     path('clases/detalle/<int:pk>', views.CursoDetalle.as_view(), name='Detalle'),
 ]
-#hoalaaaa
+
+
