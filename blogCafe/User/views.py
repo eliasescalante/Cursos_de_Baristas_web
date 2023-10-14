@@ -33,17 +33,18 @@ def login_request(request):
 
 # Vista de registro
 def register(request):
-    msg_register = ""
+
     if request.method == 'POST':
 
+        # form = UserCreationForm(request.POST)
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            # Si los datos ingresados en el form son válidos, con form.save()
-            # creamos un nuevo user usando esos datos
+            username = form.cleaned_data['username']
             form.save()
-            return render(request,"CursosApp/index.html")
-        
-        msg_register = "Error en los datos ingresados"
+            return render(request,"CursosApp/index.html", {"mensaje":"Usuario creado..."})
+    else:
+        # form = UserCreationForm()
+        form = UserRegisterForm()
+    
+    return render(request, "User/registro.html", {"form":form})
 
-    form = UserRegisterForm()     
-    return render(request,"User/registro.html" ,  {"form":form, "msg_register": msg_register})
