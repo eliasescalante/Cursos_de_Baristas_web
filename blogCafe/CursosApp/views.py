@@ -18,6 +18,7 @@ def estudiantes(request):
     return render(request, 'CursosApp/estudiantes.html')
 
 def nosotros(request):
+    #pagina sobre nosotros
     return render ( request , "CursosApp/nosotros.html" )
 
 ###################################################################

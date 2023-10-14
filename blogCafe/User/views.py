@@ -8,7 +8,7 @@ from User.forms import  UserRegisterForm
 
 # Create your views here.
 def login_request(request):
-
+    #formulario para el login
     if request.method == "POST":
         form = AuthenticationForm(request, data = request.POST)
 
