@@ -12,6 +12,7 @@ class Alumno(models.Model):
     email = models.EmailField()
     nacimiento = models.DateField()
     gustos = models.CharField(max_length=40)
+    curso_inscripto = models.CharField(max_length=200, null = True)
 
 
 class Curso(models.Model):
@@ -23,7 +24,12 @@ class Curso(models.Model):
     cupo = models.IntegerField()
     fecha = models.DateField()
     imagen = models.ImageField(upload_to="cursos",null=True)
-    
+
     def _str__(self):
         return self.nombre
-    
+
+class Comentario(models.Model):
+    #modelo de comentarios
+
+    nombre = models.CharField(max_length=20)
+    comentario = models.CharField(max_length=200)
