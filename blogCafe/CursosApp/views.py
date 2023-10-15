@@ -38,26 +38,5 @@ class CursoDetalle(DetailView):
     template_name='CursosApp/curso_detalle.html'
 
 
-#VISTAS PARA LOS CURSOS DE CAFE
-def filtrado(request):
-    return render(request,'CursosApp/cursoFiltrado.html')
-
-def arte(request):
-    return render(request,'CursosApp/cursoArte.html')
-
-def barista(request):
-    return render(request,'CursosApp/cursoBaristaArte.html')
-
-def expreso(request):
-    return render(request,'CursosApp/cursoExpreso.html')
-
-def infusores(request):
-    return render(request,'CursosApp/cursoInfusores.html')
-
-def tostado(request):
-    return render(request,'CursosApp/cursoTostado.html')
-
-
-
 
 

@@ -9,12 +9,6 @@ urlpatterns = [
     path('estudiantes', views.estudiantes,name="Estudiantes"),
     path('nosotros', views.nosotros,name="Nosotros"),
     path('clases/detalle/<int:pk>', views.CursoDetalle.as_view(), name='Detalle'),
-    path('filtrado/', views.filtrado, name='Filtrado'),
-    path('arte/', views.arte, name='Arte'),
-    path('barista/', views.barista, name='Barista'),
-    path('expreso/', views.expreso, name='Expreso'),
-    path('infusores/', views.infusores, name='Infusores'),
-    path('tostado/', views.tostado, name='Tostado'),
 ]
 
 

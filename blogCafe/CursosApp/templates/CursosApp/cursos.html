@@ -36,31 +36,8 @@
                             <div class="card-body">
                             <h3 class="card-title" style="color: aliceblue;">{{ curso.nombre }}</h3>
                             <p class="card-text" style="color: aliceblue;">TUTOR: {{ curso.tutor }}</p>
-                            {% if curso.id == 1 %}
-                            <a href= "{% url 'Filtrado' %}" class="btn btn-primary">Ver</a>
+                            <a href= "{% url 'Detalle' curso.id   %}" class="btn btn-primary">Ver</a>
                             <a href="!#" class="btn btn-primary">Inscribirse</a>
-                            {%endif%}
-                            {% if curso.id == 2 %}
-                            <a href= "{% url 'Arte' %}" class="btn btn-primary">Ver</a>
-                            <a href="!#" class="btn btn-primary">Inscribirse</a>
-                            {%endif%}
-                            {% if curso.id == 3 %}
-                            <a href= "{% url 'Barista' %}" class="btn btn-primary">Ver</a>
-                            <a href="!#" class="btn btn-primary">Inscribirse</a>
-                            {%endif%}
-                            {% if curso.id == 4 %}
-                            <a href= "{% url 'Expreso' %}" class="btn btn-primary">Ver</a>
-                            <a href="!#" class="btn btn-primary">Inscribirse</a>
-                            {%endif%}
-                            {% if curso.id == 5 %}
-                            <a href= "{% url 'Infusores' %}" class="btn btn-primary">Ver</a>
-                            <a href="!#" class="btn btn-primary">Inscribirse</a>
-                            {%endif%}
-                            {% if curso.id == 6 %}
-                            <a href= "{% url 'Tostado' %}" class="btn btn-primary">Ver</a>
-                            <a href="!#" class="btn btn-primary">Inscribirse</a>
-                            {%endif%}
-
                             </div>
                         </div>
                     {% endfor %}
