@@ -1,0 +1,27 @@
+{% extends "CursosApp/base.html"%}
+{% load static %}
+
+{% block title %} Cursos {% endblock title %}
+
+{% block section1 %}
+<br>
+<br>
+<br>
+<br>
+<br>
+{% if miFormulario.errores %}
+
+    <p style="color: red;"> Por favor, ingrese los datos de manera correcta.</p>
+
+    {% endif %}
+    <form action="" method="POST">{% csrf_token %}
+        <table> 
+            {{ form.as_table }}
+        </table>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+
+{% endblock %}

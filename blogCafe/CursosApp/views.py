@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import  DetailView
+from django.views.generic import  DetailView,CreateView, UpdateView
+from django.urls import reverse_lazy
 from .models import *
 # Create your views here.
 
@@ -34,8 +35,20 @@ def imprimir_cursos(request):
 
 class CursoDetalle(DetailView):
 
-    model=Curso
-    template_name='CursosApp/curso_detalle.html'
+    model = Curso
+    template_name = 'CursosApp/curso_detalle.html'
+
+class CursoCreateView(CreateView):
+      model = Curso
+      template_name = "CursosApp/cursoFormulario.html"
+      success_url = reverse_lazy("New")
+      fields= ["nombre","tutor","cupo","fecha","descripcion"]
+
+class CursoUpdateView(UpdateView):
+      model = Curso
+      template_name = "CursosApp/cursoEdit.html"
+      success_url = reverse_lazy("Edit")
+      fields= ["nombre","tutor"]
 
 
 
