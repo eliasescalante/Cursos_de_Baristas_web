@@ -1,10 +1,10 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, User, PasswordChangeForm
 
-
+# formulario para editar el usuario
 class UserEditForm(UserCreationForm):
 
-    password = None
+    # password = None
     email = forms.CharField(widget=forms.EmailInput(attrs={'class':'form-control'}))
     first_name = forms.CharField(max_length=20, label='Nombre', widget=forms.TextInput(attrs={'class':'form-control'}))
     last_name = forms.CharField(max_length=20, label='Apellido', widget=forms.TextInput(attrs={'class':'form-control'}))
@@ -14,7 +14,7 @@ class UserEditForm(UserCreationForm):
         model = User
         fields = ('email', 'username', 'first_name', 'last_name')
 
-
+#formulario para registrar usuario
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
     password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
@@ -25,7 +25,7 @@ class UserRegisterForm(UserCreationForm):
         fields = ["username", "email", "password1", "password2"]
 
         help_text = {k: "" for k in fields}
-
+#formulario para cambiar contraseña
 class CambioDeContrasenia(PasswordChangeForm):
     contrasenia_vieja = forms.CharField(label=("Contraseña Actual"),
                                    widget=forms.PasswordInput(attrs={'class':'form-control'}))
