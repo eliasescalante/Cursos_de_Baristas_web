@@ -7,7 +7,6 @@ from User.forms import  UserRegisterForm
 from django.urls import reverse_lazy
 from User.forms import UserEditForm, CambioDeContrasenia
 
-#esta funcionando esto 
 
 # Create your views here.
 def login_request(request):

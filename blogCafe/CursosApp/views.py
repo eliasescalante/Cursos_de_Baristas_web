@@ -25,7 +25,7 @@ def nosotros(request):
 ###################################################################
 
 def imprimir_cursos(request):
-
+    #pagina para imprimir los cursos
     cursos = Curso.objects.all()
 
     context = {
@@ -34,7 +34,7 @@ def imprimir_cursos(request):
     return render(request, r"CursosApp\cursos.html",context)
 
 class CursoDetalle(DetailView):
-
+    #pagina para los detalles de los cursos
     model = Curso
     template_name = 'CursosApp/curso_detalle.html'
 
