@@ -1,8 +1,11 @@
 from django.shortcuts import render
-
+from django.views.generic import UpdateView
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.views import  PasswordChangeView
 from User.forms import  UserRegisterForm
+from django.urls import reverse_lazy
+from User.forms import UserEditForm, CambioDeContrasenia
 
 #esta funcionando esto 
 
@@ -48,3 +51,26 @@ def register(request):
     
     return render(request, "User/registro.html", {"form":form})
 
+#vista del cambio ok
+def cambio_exitoso(request):
+    return render(request, 'User/cambio_exitoso.html')
+
+
+#Vista de edicion de usuario
+class UsuarioEdicion(UpdateView):
+    form_class = UserEditForm
+    template_name= 'User/perfil.html'
+    success_url = reverse_lazy('Edicion_ok')
+
+    def get_object(self):
+        return self.request.user
+
+#clase para cambiar el pass
+class CambioPassword(PasswordChangeView):
+    form_class = CambioDeContrasenia
+    template_name = 'User/cambioPass.html'
+    success_url = reverse_lazy('Contrasenia_exitosa')
+
+# vista del cambio de pass exitoso    
+def contra_exitosa(request):
+    return render(request, 'User/contraseniaok.html', {})

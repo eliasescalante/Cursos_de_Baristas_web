@@ -37,7 +37,11 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="{% url 'Cursos' %}">Cursos</a></li>
+                        {% if not request.user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'Estudiantes' %}">Estudiantes</a></li>
+                        {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'editar_perfil' %}">Estudiantes</a></li>
+                        {% endif %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'Nosotros' %}">Sobre Nosotros...</a></li>
                     </ul>
                 </div>
