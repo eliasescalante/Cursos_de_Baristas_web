@@ -7,18 +7,21 @@
 
 {% block section1 %}
 
+<body>
 <br>
 <br>
 <br>
 <br>
 <br>
-<h1>{{curso.nombre}}</h1>
+<h1 align="center">{{curso.nombre}}</h1>
+<br>
+<br>
 
-<h3>
- Tutor = {{curso.tutor }}
- Cupo = {{curso.cupo }}
- Fecha = {{curso.fecha }}
- Nombre = {{nombre}}
+<h3 align="center">
+ Tutor = {{curso.tutor }}  <br>
+ Cupo = {{curso.cupo }}    <br>
+ Fecha = {{curso.fecha }}   <br>
+ 
 
 {% if request.user.is_superuser %}
 Soy SuperUser, puedo editar
@@ -31,8 +34,7 @@ Soy SuperUser, puedo editar
 <br>
 <br>
 <br>
-<p>El objetivo de este curso te brindara las herramientas para poder obtener café con diferentes métodos de filtro, el cual puede ser aplicado para uso domestico o profesional.
-Ideal para los que aman hacer un rico y buen café en casa sin la necesidad de tener conocimiento previo.
+<h3> {{ curso.descripcion }} </h3>
 
 
 <br>
