@@ -31,11 +31,11 @@
 
                 <div class="row">
                     {% for curso in cursos %}
-                        <div class="card" style="width: 18rem; left: 70px; background-color: darkcyan;" >
-                            <img src="{{curso.imagen.url}}" class="card-img-top" alt="..." style="height: 200px;">
+                        <div class="card" >
+                            <img src="{{curso.imagen.url}}" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <h3 class="card-title" style="color: aliceblue;">{{ curso.nombre }}</h3>
-                            <p class="card-text" style="color: aliceblue;">TUTOR: {{ curso.tutor }}</p>
+                            <h3 class="card-title">{{ curso.nombre }}</h3>
+                            <p class="card-text">TUTOR: {{ curso.tutor }}</p>
                             <a href= "{% url 'Detalle' curso.id   %}" class="btn btn-primary">Ver</a>
                             <a href="!#" class="btn btn-primary">Inscribirse</a>
                             {% if request.user.is_superuser %}
