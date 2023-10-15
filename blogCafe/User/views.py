@@ -65,6 +65,7 @@ class UsuarioEdicion(UpdateView):
         return self.request.user
 
 
+
 #clase para cambiar el pass
 class CambioPassword(PasswordChangeView):
     form_class = CambioDeContrasenia
@@ -74,3 +75,5 @@ class CambioPassword(PasswordChangeView):
 # vista del cambio de pass exitoso    
 def contra_exitosa(request):
     return render(request, 'User/contraseniaok.html', {})
+
+
