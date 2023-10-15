@@ -11,4 +11,5 @@ urlpatterns = [
     path('cambio_exitoso/',views.cambio_exitoso, name="Edicion_ok"),
     path('contra_exitosa/', views.contra_exitosa, name = "Contrasenia_exitosa" ),
     path('passwordCambio/', CambioPassword.as_view(), name='cambiar_password'),
+    path('logout', LogoutView.as_view(template_name='CursosApp/index.html'), name="Logout"),
 ]
