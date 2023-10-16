@@ -1,11 +1,12 @@
 {% extends "CursosApp/base.html"%}
 {% load static %}
-
+<link href="{% static 'CursosApp/css/tarjetas.css' %}" rel="stylesheet" />
 {% block title %} Cursos {% endblock title %}
 
 {% block section1 %}
 
 {% if not request.user.is_authenticated %}
+
 <br>
 <br>
 <br>
