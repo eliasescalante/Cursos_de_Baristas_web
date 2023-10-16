@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import  DetailView,CreateView, UpdateView
 from django.urls import reverse_lazy
 from .models import *
+from .forms import FormularioComentario
 # Create your views here.
 
 ################################################################ 
