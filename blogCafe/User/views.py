@@ -23,11 +23,11 @@ def login_request(request):
             if user is not None:
                 login(request,user)
 
-                return render(request,"CursosApp/index.html", {"mensaje":f"Bienvenido {usuario}"})
+                return render(request,"User/bienvenido.html", {"mensaje":f"Bienvenido {usuario}"})
             else:
-                return render(request,"CursosApp/index.html",{"mensaje":"Error, datos incorrectos"})
+                return render(request,"User/error.html",{"mensaje":"Error, datos incorrectos"})
         else:
-            return render(request, "CursosApp/index.html", {"mensaje":"Error, formulario erroneo"})
+            return render(request, "User/error.html", {"mensaje":"Error, formulario erroneo"})
 
     form = AuthenticationForm()
     return render (request,"User/login.html", {'form':form})
