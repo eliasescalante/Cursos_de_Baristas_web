@@ -1,0 +1,25 @@
+{% extends "CursosApp/base.html" %}
+{% load static %}
+{% block Cambia %}
+
+<title> Editar  </title>
+
+<body> 
+<br>
+<br>
+<br>
+<br>
+<br>
+    <form action= "" method="POST"> {% csrf_token %}
+
+        ¿Estas seguro que desea borrar el curso {{curso.nombre}}?
+
+       <input type="submit" value="Editar"/>
+    </form>
+
+</body>
+
+
+
+
+{% endblock %}

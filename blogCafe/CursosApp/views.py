@@ -1,5 +1,5 @@
 from django.shortcuts import render , redirect
-from django.views.generic import  DetailView,CreateView, UpdateView
+from django.views.generic import  DetailView,CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import *
 from .forms import FormularioComentario
@@ -51,6 +51,11 @@ class CursoUpdateView(UpdateView):
       template_name = "CursosApp/cursoEdit.html"
       success_url = reverse_lazy("Editar")
       fields= ["nombre","tutor"]
+
+class CursoDeleteView(DeleteView):
+    model = Curso
+    success_url = reverse_lazy("Cursos")
+    template_name = "CursosApp/cursoBorrar.html"
 
 
 ############################################
