@@ -47,7 +47,9 @@
                         {% if request.user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'Logout' %}">Logout</a></li>
                         <li class="nav-item" style="position: relative;left: 70px; color: aliceblue">Bienvenido {{user.username}}!!</li>
-                        <img src="{{user_avatar}}" alt="" style="height: 40px;width: 40px; position: relative; left: 80px;">
+                            {% if user_avatar %}
+                            <img src="{{user_avatar}}" alt="" style="height: 40px;width: 40px; position: relative; left: 80px;">
+                            {% endif %}
                         {% endif %}
 
                     </ul>

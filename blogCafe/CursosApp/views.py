@@ -4,12 +4,12 @@ from django.urls import reverse_lazy
 from .models import *
 from .forms import FormularioComentario, CursoFormulario
 from django.contrib.auth.mixins import LoginRequiredMixin
+from User.models import Imagen
 # Create your views here.
 
 ################################################################ 
 
 def inicio(request):
-    #pagina de inicio
     return render(request, 'CursosApp/index.html')
 
 def cursos(request): 
