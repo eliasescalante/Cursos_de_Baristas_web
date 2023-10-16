@@ -1,5 +1,6 @@
 from django import forms
 
+#formulario curso
 class CursoFormulario(forms.Form):
     nombre = forms.CharField(max_length = 40)
     tutor = forms.CharField(max_length = 40)
