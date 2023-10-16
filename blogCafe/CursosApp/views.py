@@ -41,13 +41,13 @@ class CursoDetalle(DetailView):
 class CursoCreateView(CreateView):
       model = Curso
       template_name = "CursosApp/cursoFormulario.html"
-      success_url = reverse_lazy("New")
+      success_url = reverse_lazy("Nuevo")
       fields= ["nombre","tutor","cupo","fecha","descripcion"]
 
 class CursoUpdateView(UpdateView):
       model = Curso
       template_name = "CursosApp/cursoEdit.html"
-      success_url = reverse_lazy("Edit")
+      success_url = reverse_lazy("Editar")
       fields= ["nombre","tutor"]
 
 
