@@ -17,13 +17,18 @@
 
 <div class="container">
 
-<form id="login-form" style=" width: 50vw; margin-left : 20vw;" method="post" enctype="multipart/form-data">{% csrf_token %}
-    {{ form.as_p }}
-    <br>
-    <div class="container text-center">
-    <button type="submit" class="btn btn-primary text-center" style="position: relative; right: 100px;">Guardar cambios</button>
-    </div>
-</form>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <table>
+
+            {{ mi_form.as_table }}
+            <input type="submit" value="Actualizar">
+
+        </table>
+
+
+    </form>
 </div>
 <br>
 
