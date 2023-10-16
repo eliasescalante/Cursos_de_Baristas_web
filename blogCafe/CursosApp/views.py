@@ -61,7 +61,7 @@ def crear_comentario(request, curso_id):
         if formulario.is_valid():
             # Si el formulario es válido, guardar el comentario en la base de datos
             formulario.save()
-            return render('curso_detalle.html')  # Redirigir a la página de éxito
+            return render(request, 'CursosApp/curso_detalle.html')  # Redirigir a la página de éxito
     else:
         # Si no se envió el formulario, mostrar el formulario en blanco
         formulario = FormularioComentario()

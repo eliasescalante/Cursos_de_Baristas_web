@@ -11,14 +11,25 @@
 
 
 <div class="container">
-    <h1>Agrega un Comentario</h1>
+    <h1>Agregar un Comentario</h1>
 </div>
-<div class="form-group">
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Guardar</button>
-</form>
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ formulario.nombre.label_tag }}
+            {{ formulario.nombre }}
+        </div>
+        <div class="form-group">
+            {{ formulario.mensaje.label_tag }}
+            {{ formulario.mensaje }}
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Comentario</button>
+    </form>
 </div>
+
+
+
+
 <br>
 {% endblock %}
