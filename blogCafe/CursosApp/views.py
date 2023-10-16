@@ -2,7 +2,7 @@ from django.shortcuts import render , redirect
 from django.views.generic import  DetailView,CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import *
-from .forms import FormularioComentario
+from .forms import FormularioComentario, CursoFormulario
 from django.contrib.auth.mixins import LoginRequiredMixin
 from User.models import Imagen
 # Create your views here.
@@ -52,8 +52,9 @@ class CursoCreateView(CreateView):
 class CursoUpdateView(UpdateView):
       model = Curso
       template_name = "CursosApp/cursoEdit.html"
-      success_url = reverse_lazy("Editar")
-      fields= ["nombre","tutor"]
+      success_url = reverse_lazy("cursos_imprimir")
+      fields= ["nombre"]
+
 
 class CursoDeleteView(DeleteView):
     model = Curso
@@ -61,12 +62,13 @@ class CursoDeleteView(DeleteView):
     template_name = "CursosApp/cursoBorrar.html"
 
 
-############################################
+###########################################
+
 class Comentarios(LoginRequiredMixin, CreateView):
     model = Comentario
     form_class = FormularioComentario
     template_name = 'CursosApp/comentario.html'
-    success_url = 'CursosApp/base.html'
+    success_url = '/'
 
     def form_valid(self, form):
         form.instance.comentario = Curso.objects.get(pk=self.kwargs['curso_id'])
