@@ -59,12 +59,13 @@ class CursoDeleteView(DeleteView):
     template_name = "CursosApp/cursoBorrar.html"
 
 
-############################################
+###########################################
+
 class Comentarios(LoginRequiredMixin, CreateView):
     model = Comentario
     form_class = FormularioComentario
     template_name = 'CursosApp/comentario.html'
-    success_url = 'CursosApp/base.html'
+    success_url = '/'
 
     def form_valid(self, form):
         form.instance.comentario = Curso.objects.get(pk=self.kwargs['curso_id'])
