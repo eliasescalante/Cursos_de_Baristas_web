@@ -52,7 +52,11 @@
         <hr>
         {% endfor %}
     {% endif %}
+    {% if curso.id %}
     <a href="{% url 'crear_comentario' curso.id %}">Crear Comentario</a>
+{% else %}
+    <p>El ID del curso no es válido.</p>
+{% endif %}
     </div>
 </div>
 <br>

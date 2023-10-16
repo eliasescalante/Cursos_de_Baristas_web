@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from django.views.generic import  DetailView,CreateView, UpdateView
 from django.urls import reverse_lazy
 from .models import *
@@ -56,17 +56,21 @@ class CursoUpdateView(UpdateView):
 def crear_comentario(request, curso_id):
     if request.method == 'POST':
         # Si se envió el formulario, procesar los datos enviados
-        formulario = FormularioComentario(request.POST)
+        mi_formulario = FormularioComentario(request.POST)
 
-        if formulario.is_valid():
-            # Si el formulario es válido, guardar el comentario en la base de datos
-            formulario.save()
-            return render(request, 'CursosApp/curso_detalle.html')  # Redirigir a la página de éxito
+        if mi_formulario.is_valid():
+                data = mi_formulario.cleaned_data
+                curso = Curso.objects.get(pk=curso_id)  # Obtén el objeto Curso correspondiente
+                comentarios = Comentario(nombre=data['nombre'], mensaje=data['mensaje'], comentario=curso)
+                comentarios.save()
+                return redirect('CursosApp/curso_detalle', curso_id=curso_id)  # Redirigir a la página de éxito
+
+            
     else:
         # Si no se envió el formulario, mostrar el formulario en blanco
-        formulario = FormularioComentario()
+        mi_formulario = FormularioComentario()
 
-    return render(request, 'CursosApp/comentario.html', {'formulario': formulario})     
+    return render(request, 'CursosApp/comentario.html', {'mi_formulario': mi_formulario, 'curso_id': curso_id})     
 
 
 
