@@ -12,7 +12,6 @@ class UserEditForm(UserCreationForm):
 
     last_name = forms.CharField(required=False)
     first_name = forms.CharField(required=False)
-    cursos_inscriptos = forms.CharField(label='Cursos', required=False)
     imagen = forms.ImageField(required=False)
 
     class Meta:

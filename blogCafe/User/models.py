@@ -10,9 +10,3 @@ class Imagen(models.Model):
 
     def __str__(self):
         return f"{settings.MEDIA_URL}{self.imagen}"
-
-class Usuarios(User):
-    cursos_inscriptos = models.TextField()
-
-    def _str__(self):
-        return self.cursos_inscriptos
