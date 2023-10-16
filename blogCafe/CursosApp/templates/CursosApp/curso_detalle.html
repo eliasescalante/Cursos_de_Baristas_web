@@ -38,6 +38,23 @@
 <br>
 <br>
 <br>
+<div class="container">
+    <h4>Comentarios...</h4>
+    <br>
+    <div class="container">
+    {% if not curso.comentarios.all %}
+        No han comentado este curso
+    {% else %}
+        {% for comentario in curso.comentarios.all %}
+        <p><strong>{{comentario.nombre}}</strong></p>
+        <p>{{comentario.mensaje}}</p>
+        <p><small>{{comentario.fechaComentario}}</small></p>
+        <hr>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'crear_comentario' curso.pk %}">Agrega un Comentario</a>
+    </div>
+</div>
 <br>
 <br>
 
