@@ -2,7 +2,7 @@ from django.shortcuts import render , redirect
 from django.views.generic import  DetailView,CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import *
-from .forms import FormularioComentario
+from .forms import FormularioComentario, CursoFormulario
 from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
@@ -49,8 +49,9 @@ class CursoCreateView(CreateView):
 class CursoUpdateView(UpdateView):
       model = Curso
       template_name = "CursosApp/cursoEdit.html"
-      success_url = reverse_lazy("Editar")
-      fields= ["nombre","tutor"]
+      success_url = reverse_lazy("cursos_imprimir")
+      fields= ["nombre"]
+
 
 class CursoDeleteView(DeleteView):
     model = Curso
