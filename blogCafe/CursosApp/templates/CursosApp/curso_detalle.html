@@ -1,70 +1,50 @@
-{% extends "CursosApp/base.html"%}
+{% extends "CursosApp/base.html" %}
 {% load static %}
 
-
-{% block title %} {{curso.nombre}} {% endblock title %}
-
+{% block title %} {{ curso.nombre }} {% endblock title %}
 
 {% block section1 %}
-
-<body>
-<br>
-<br>
-<br>
-<br>
-<br>
-<h1 align="center">{{curso.nombre}}</h1>
-<br>
-<br>
-
-<h3 align="center">
- Tutor = {{curso.tutor }}  <br>
- Cupo = {{curso.cupo }}    <br>
- Fecha = {{curso.fecha }}   <br>
- 
-
-
-
-</h3>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<h3> {{ curso.descripcion }} </h3>
-
-
-<br>
-<br>
-<br>
-<div class="container">
-    <h4>Comentarios...</h4>
+<link href="{% static 'CursosApp/css/detalles.css' %}" rel="stylesheet" />
+  <body>
     <br>
-    <div class="container">
-    {% if not curso.comentarios.all %}
-        No han comentado este curso
-    {% else %}
-        {% for comentario in curso.comentarios.all %}
-        <p><strong>{{comentario.nombre}}</strong></p>
-        <p>{{comentario.mensaje}}</p>
-        <p><small>{{comentario.fechaComentario}}</small></p>
-        <hr>
-        {% endfor %}
-    {% endif %}
-    {% if curso.id %}
-    <a href="{% url 'crear_comentario' curso.id %}">Crear Comentario</a>
-{% else %}
-    <p>El ID del curso no es válido.</p>
-{% endif %}
+    <br>
+    <div class="custom-cursos-page">
+        <div class="course-info">
+            <img src="{{ curso.imagen.url }}" class="custom-course-image" alt="...">
+            <div class="custom-course-details">
+                <h2 class="custom-titulo">{{ curso.nombre }}</h2>
+                <h3 class="custom-informacion">
+                    Tutor = {{ curso.tutor }}<br>
+                    Cupo = {{ curso.cupo }}<br>
+                    Fecha = {{ curso.fecha }}<br>
+                </h3>
+            </div>
+        </div>
+        <br>
+        <h3 class="custom-descripcion">{{ curso.descripcion }}</h3>
+        <div class="custom-comentarios">
+            <br>
+            <br>
+            <h4>Comentarios...</h4>
+            <div class="container">
+                {% if not curso.comentarios.all %}
+                No han comentado este curso
+                {% else %}
+                {% for comentario in curso.comentarios.all %}
+                <p><strong>{{ comentario.nombre }}</strong></p>
+                <p>{{ comentario.mensaje }}</p>
+                <p><small>{{ comentario.fechaComentario }}</small></p>
+                <hr>
+                {% endfor %}
+                {% endif %}
+                {% if curso.id %}
+                <a class="custom-create-comment" href="{% url 'crear_comentario' curso.id %}">Crear Comentario</a>
+                {% else %}
+                <p>El ID del curso no es válido.</p>
+                {% endif %}
+            </div>
+        </div>
     </div>
-</div>
-<br>
-<br>
-
-
-
-Duración: 2 clases, de 2hs.</p>
-
-
-{% endblock %}
+    <p class="custom-duration">Duración: 2 clases, de 2hs.</p>
+  </body>
+{% endblock section1 %}
