@@ -1,0 +1,45 @@
+/* Estilo para las tarjetas */
+.card {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    background-color: darkcyan;
+    width: 100%;
+    max-width: none;
+  }
+  
+  .card-img-top {
+    width: 150px; /* Ajusta el tamaño de la imagen según tus preferencias */
+    height: 150px; /* Ajusta el tamaño de la imagen según tus preferencias */
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .card-body {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .card-title {
+    color: aliceblue;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    color: aliceblue;
+    margin-bottom: 10px;
+  }
+  
+  .btn-primary {
+    margin-top: auto;
+    margin-left: auto;
+    display: block;
+    margin-right: 10px;
+  }
+  
+  
