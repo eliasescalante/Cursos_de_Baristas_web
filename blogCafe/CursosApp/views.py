@@ -10,10 +10,7 @@ from User.models import Imagen
 ################################################################ 
 
 def inicio(request):
-    
-    imagen = Imagen.objects.filter(user=request.user.id)[0]
-    #pagina de inicio
-    return render(request, 'CursosApp/index.html', {"url": imagen})
+    return render(request, 'CursosApp/index.html')
 
 def cursos(request): 
     #pagina de curso
