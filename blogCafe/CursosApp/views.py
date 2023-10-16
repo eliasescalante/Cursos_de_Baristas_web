@@ -3,6 +3,7 @@ from django.views.generic import  DetailView,CreateView, UpdateView
 from django.urls import reverse_lazy
 from .models import *
 from .forms import FormularioComentario
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 ################################################################ 
@@ -53,24 +54,19 @@ class CursoUpdateView(UpdateView):
 
 
 ############################################
-def crear_comentario(request, curso_id):
-    if request.method == 'POST':
-        # Si se envió el formulario, procesar los datos enviados
-        mi_formulario = FormularioComentario(request.POST)
+class Comentarios(LoginRequiredMixin, CreateView):
+    model = Comentario
+    form_class = FormularioComentario
+    template_name = 'CursosApp/comentario.html'
+    success_url = 'CursosApp/base.html'
 
-        if mi_formulario.is_valid():
-                data = mi_formulario.cleaned_data
-                curso = Curso.objects.get(pk=curso_id)  # Obtén el objeto Curso correspondiente
-                comentarios = Comentario(nombre=data['nombre'], mensaje=data['mensaje'], comentario=curso)
-                comentarios.save()
-                return redirect('CursosApp/curso_detalle', curso_id=curso_id)  # Redirigir a la página de éxito
+    def form_valid(self, form):
+        form.instance.comentario = Curso.objects.get(pk=self.kwargs['curso_id'])
+        return super().form_valid(form)
 
-            
-    else:
-        # Si no se envió el formulario, mostrar el formulario en blanco
-        mi_formulario = FormularioComentario()
-
-    return render(request, 'CursosApp/comentario.html', {'mi_formulario': mi_formulario, 'curso_id': curso_id})     
-
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['mi_formulario'] = context['form']  # Renombrar el formulario para que coincida con tu plantilla
+        return context
 
 
