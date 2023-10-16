@@ -7,7 +7,6 @@ from User.forms import  UserRegisterForm
 from django.urls import reverse_lazy
 from User.forms import UserEditForm, CambioDeContrasenia
 
-#esta funcionando esto 
 
 # Create your views here.
 def login_request(request):
@@ -65,6 +64,8 @@ class UsuarioEdicion(UpdateView):
     def get_object(self):
         return self.request.user
 
+
+
 #clase para cambiar el pass
 class CambioPassword(PasswordChangeView):
     form_class = CambioDeContrasenia
@@ -74,3 +75,5 @@ class CambioPassword(PasswordChangeView):
 # vista del cambio de pass exitoso    
 def contra_exitosa(request):
     return render(request, 'User/contraseniaok.html', {})
+
+

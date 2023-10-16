@@ -16,6 +16,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'CursosApp/css/styles.css' %}" rel="stylesheet" />
         <link href="{% static 'CursosApp/css/team.css' %}" rel="stylesheet" />
+        <link href="{% static 'CursosApp/css/tarjetas.css' %}" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -45,6 +46,8 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'Nosotros' %}">Sobre Nosotros...</a></li>
                         {% if request.user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'Logout' %}">Logout</a></li>
+                        <li class="nav-item" style="position: relative;left: 70px; color: aliceblue">Bienvenido {{user.username}}!!</li>
+                        <img src="{{user_avatar}}" alt="" style="height: 40px;width: 40px; position: relative; left: 80px;">
                         {% endif %}
 
                     </ul>
