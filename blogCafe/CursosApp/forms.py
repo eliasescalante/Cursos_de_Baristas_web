@@ -1,4 +1,6 @@
 from django import forms
+from .models import Comentario
+
 
 #formulario curso
 class CursoFormulario(forms.Form):
@@ -12,3 +14,11 @@ class CursoFormulario(forms.Form):
     def _str__(self):
         return self.nombre
 
+class FormularioComentario(forms.ModelForm):
+    class Meta:
+        model = Comentario
+        fields = ('nombre', 'mensaje')
+        widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            'mensaje' : forms.Textarea(attrs={'class': 'form-control'}),
+        }    

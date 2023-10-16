@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -30,7 +31,13 @@ class Curso(models.Model):
         return self.nombre
 
 class Comentario(models.Model):
-    #modelo de comentarios
+    comentario = models.ForeignKey(Curso, related_name='comentarios', on_delete=models.CASCADE, null=True)
+    nombre = models.CharField(max_length=40)
+    mensaje = models.TextField(null=True, blank=True)
+    fechaComentario = models.DateTimeField(default=timezone.now)
 
-    nombre = models.CharField(max_length=20)
-    comentario = models.CharField(max_length=200)
+    class Meta:
+        ordering = ['-fechaComentario']
+
+    def __str__(self):
+        return '%s - %s' % (self.nombre, self.comentario)

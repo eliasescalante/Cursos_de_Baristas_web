@@ -51,5 +51,21 @@ class CursoUpdateView(UpdateView):
       fields= ["nombre","tutor"]
 
 
+############################################
+def crear_comentario(request, curso_id):
+    if request.method == 'POST':
+        # Si se envió el formulario, procesar los datos enviados
+        formulario = FormularioComentario(request.POST)
+
+        if formulario.is_valid():
+            # Si el formulario es válido, guardar el comentario en la base de datos
+            formulario.save()
+            return render('curso_detalle.html')  # Redirigir a la página de éxito
+    else:
+        # Si no se envió el formulario, mostrar el formulario en blanco
+        formulario = FormularioComentario()
+
+    return render(request, 'CursosApp/comentario.html', {'formulario': formulario})     
+
 
 

@@ -10,7 +10,8 @@ urlpatterns = [
     path('nosotros', views.nosotros,name="Nosotros"),
     path('clases/detalle/<int:pk>', views.CursoDetalle.as_view(), name='Detalle'),
     path('clases/nuevo/', views.CursoCreateView.as_view(), name='Nuevo'),
-    path('clases/editar/<int:pk>', views.CursoUpdateView.as_view(), name='Editar')
+    path('clases/editar/<int:pk>', views.CursoUpdateView.as_view(), name='Editar'),
+    path('crear_comentario/<int:curso_id>/', views.crear_comentario, name='crear_comentario'),
 ]
 
 
