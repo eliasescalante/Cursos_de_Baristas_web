@@ -5,7 +5,7 @@ from django.conf import settings
 # Clase 24
 class Imagen(models.Model):
     #modelo de imagen para el avatar
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     imagen = models.ImageField(upload_to='imagenes', null=True, blank = True)
 
     def __str__(self):
