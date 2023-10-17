@@ -8,8 +8,8 @@ class CursoFormulario(forms.Form):
     tutor = forms.CharField(max_length = 40)
     cupo = forms.IntegerField()
     fecha = forms.DateField()
-#    imagen = forms.ImageField()
-#    descripcion = forms.CharField()
+    imagen = forms.ImageField()
+    descripcion = forms.CharField()
 
     def _str__(self):
         return self.nombre
