@@ -62,6 +62,7 @@ class CursoDeleteView(DeleteView):
 ###########################################
 
 class Comentarios(LoginRequiredMixin, CreateView):
+    #vista para los comentarios
     model = Comentario
     form_class = FormularioComentario
     template_name = 'CursosApp/comentario.html'

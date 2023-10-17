@@ -3,6 +3,9 @@ from django.utils import timezone
 
 # Create your models here.
 
+
+#modelo alumno
+
 class Alumno(models.Model):
     usuario = models.CharField(max_length=40, null=True)
     nombre = models.CharField(max_length=40)
@@ -15,10 +18,9 @@ class Alumno(models.Model):
     def __str__(self):
         return f"{self.nombre} {self.apellido}"
 
-
+#modelo de curso
 class Curso(models.Model):
 
-    #modelo de curso
 
     nombre = models.CharField(max_length=40)
     tutor = models.CharField(max_length=40)
@@ -30,6 +32,8 @@ class Curso(models.Model):
     def _str__(self):
         return self.nombre
 
+
+#modelo de comentario
 class Comentario(models.Model):
     comentario = models.ForeignKey(Curso, related_name='comentarios', on_delete=models.CASCADE, null=True)
     nombre = models.CharField(max_length=40)

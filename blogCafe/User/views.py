@@ -107,7 +107,7 @@ def edit(request):
                 usuario.first_name = informacion['first_name']
                 usuario.save()
 
-                # Creamos nueva imagen en la tabla
+                
                 try:
                     avatar = Imagen.objects.get(user=usuario)
                 except Imagen.DoesNotExist:
