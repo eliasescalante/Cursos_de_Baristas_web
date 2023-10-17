@@ -18,8 +18,10 @@
 
  - Francisco Mezas: 
 
- 
+
  [vista de cursos, ...]
+
+ 
 --------
 
 ## Nombre del Proyecto: BlogCafe
