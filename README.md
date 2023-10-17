@@ -4,24 +4,33 @@
 ## **Comisión** : 47770
 -------
 ## **Alumnos**:   
- - Escalante Elias:
+### Escalante Elias:
 
 
- [esqueleto del proyecto, login al blog , funcion para imprimir los cursos, creacion de la edicion de perfil(estudiante), avatar y usuario en el navbar ]
+ - esqueleto del proyecto, 
+ - login, 
+ - vista del estudiante (edicion perfil)
+ - avatar y usuario en el navbar
 
 
- - Daniela Erario:
+ ### Daniela Erario:
 
 
- [logout, ...  ]
+- logout
+- models
+- vista cursos
+- detalle cursos
 
 
- - Francisco Mezas: 
+ ### Francisco Mezas: 
 
 
- [vista de cursos, ...]
+- vista comentarios
+- vista cursos
+- vista sobre nosotros
+- edicion estilo html y css
 
- 
+
 --------
 
 ## Nombre del Proyecto: BlogCafe
