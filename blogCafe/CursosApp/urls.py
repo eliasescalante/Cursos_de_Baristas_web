@@ -13,6 +13,7 @@ urlpatterns = [
     path('clases/editar/<int:pk>', views.CursoUpdateView.as_view(), name='Editar'),
     path('clases/borrar/<int:pk>', views.CursoDeleteView.as_view(), name='Borrar'),
     path('crear_comentario/<int:curso_id>/', views.Comentarios.as_view(), name='crear_comentario'),
+    path('inscribirse/', views.Inscripcion.as_view(), name='inscribirse'),
 
 ]
 

@@ -4,16 +4,16 @@ from django.utils import timezone
 # Create your models here.
 
 class Alumno(models.Model):
-
-    # modelo de alumno
-
-    usuario = models.CharField(max_length=40,null=True)
+    usuario = models.CharField(max_length=40, null=True)
     nombre = models.CharField(max_length=40)
     apellido = models.CharField(max_length=40)
     email = models.EmailField()
-    nacimiento = models.DateField()
+    nacimiento = models.DateField(null=True)
     gustos = models.CharField(max_length=40)
-    curso_inscripto = models.CharField(max_length=200, null = True)
+    cursos_inscriptos = models.ManyToManyField('Curso', blank=True)
+
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}"
 
 
 class Curso(models.Model):

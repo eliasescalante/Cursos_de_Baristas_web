@@ -1,0 +1,30 @@
+{% extends "CursosApp/base.html" %}
+
+
+
+{% block section1 %}
+
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="container">
+    <h1>Formulario de inscripcion</h1>
+</div>
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        {{ mi_formulario.as_p }}
+        <input type="submit" value="Enviar Formulario">
+    </form>
+
+    <a href="{% url 'Inicio' %}">Volver al Curso</a>
+</div>
+
+
+
+
+<br>
+{% endblock %}

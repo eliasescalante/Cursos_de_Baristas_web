@@ -2,7 +2,7 @@ from django.shortcuts import render , redirect
 from django.views.generic import  DetailView,CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import *
-from .forms import FormularioComentario, CursoFormulario
+from .forms import FormularioComentario,  InscripcionForm, CursoFormulario
 from django.contrib.auth.mixins import LoginRequiredMixin
 from User.models import Imagen
 # Create your views here.
@@ -76,4 +76,26 @@ class Comentarios(LoginRequiredMixin, CreateView):
         context['mi_formulario'] = context['form']  
         return context
 
+
+class Inscripcion(LoginRequiredMixin, CreateView):
+    model = Alumno
+    form_class = InscripcionForm  # Cambia 'Inscripcion' a 'InscripcionForm'
+    template_name = 'CursosApp/formularioinscripcion.html'
+    success_url = '/'
+    
+    def get_initial(self):
+        curso_id = self.request.GET.get('curso_id')  # Obtén el curso_id de la URL
+        return {'curso_id': curso_id}
+
+    def form_valid(self, form):
+        curso_id = form.cleaned_data['curso_id']
+        curso = Curso.objects.get(pk=curso_id)
+        alumno, created = Alumno.objects.get_or_create(usuario=self.request.user)
+        alumno.cursos_inscriptos.add(curso)
+        return super().form_valid(form)
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['mi_formulario'] = context['form']  
+        return context
 

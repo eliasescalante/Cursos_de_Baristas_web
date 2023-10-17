@@ -1,5 +1,5 @@
 from django import forms
-from .models import Comentario
+from .models import Comentario, Alumno
 
 
 #formulario curso
@@ -23,3 +23,17 @@ class FormularioComentario(forms.ModelForm):
             'nombre': forms.TextInput(attrs={'class': 'form-control'}),
             'mensaje' : forms.Textarea(attrs={'class': 'form-control'}),
         }
+
+
+class InscripcionForm(forms.ModelForm):
+    curso_id = forms.IntegerField(widget=forms.HiddenInput(attrs={'class': 'form-control'}))
+    class Meta:
+        model = Alumno
+        fields = ['nombre', 'apellido', 'email', 'nacimiento', 'gustos']
+        widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            'apellido': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'nacimiento': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'gustos': forms.TextInput(attrs={'class': 'form-control'}),
+          }
