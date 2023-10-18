@@ -20,6 +20,7 @@
 - models
 - vista cursos
 - detalle cursos
+- edición cursos mediante superuser
 
 
  ### Francisco Mezas: 
@@ -35,11 +36,12 @@
 
 ## Nombre del Proyecto: BlogCafe
 --------
-## **Descripcion del Proyecto**:   
+## **Descripcion del Proyecto**:
 - Realizamos un blog orientado a cursos sobre la preparacion de Cafe. En donde es necesario logearse para poder navegar.
 - Tambien tenemos la opcion de poder editar el perfil del usuario, no solo sus datos si no tambien el avatar del usuario. 
 - Ademas podemos deslogearnos de la pagina y poder ingresar con otro usuario ya existente o bien crear uno nuevo.
 - Tambien se puede ver la descripcion de los cursos que se ofrecen y tenemos la posibildad de inscribirnos en ellos.
+- Haciendo login con un superuser (nombre: daniela, contraseña:daniela) podemos editar o eliminar los cursos desde la pagina sin necesidad de ingresar a /admin.
 
 ## Video demostracion
 - link a definir
