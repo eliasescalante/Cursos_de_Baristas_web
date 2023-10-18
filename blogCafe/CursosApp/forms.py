@@ -26,7 +26,6 @@ class FormularioComentario(forms.ModelForm):
 
 
 class InscripcionForm(forms.ModelForm):
-    curso_id = forms.IntegerField(widget=forms.HiddenInput(attrs={'class': 'form-control'}))
     class Meta:
         model = Alumno
         fields = ['nombre', 'apellido', 'email', 'nacimiento', 'gustos']

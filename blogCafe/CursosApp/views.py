@@ -1,5 +1,5 @@
 from django.shortcuts import render , redirect
-from django.views.generic import  DetailView,CreateView, UpdateView, DeleteView
+from django.views.generic import  DetailView,CreateView, UpdateView, DeleteView, ListView
 from django.urls import reverse_lazy
 from .models import *
 from .forms import FormularioComentario,  InscripcionForm, CursoFormulario
@@ -78,25 +78,24 @@ class Comentarios(LoginRequiredMixin, CreateView):
         return context
 
 
-class Inscripcion(LoginRequiredMixin, CreateView):
+class Consulta(LoginRequiredMixin, CreateView):
     model = Alumno
-    form_class = InscripcionForm  # Cambia 'Inscripcion' a 'InscripcionForm'
+    form_class = InscripcionForm  
     template_name = 'CursosApp/formularioinscripcion.html'
     success_url = '/'
-    
-    def get_initial(self):
-        curso_id = self.request.GET.get('curso_id')  # Obtén el curso_id de la URL
-        return {'curso_id': curso_id}
 
     def form_valid(self, form):
-        curso_id = form.cleaned_data['curso_id']
-        curso = Curso.objects.get(pk=curso_id)
-        alumno, created = Alumno.objects.get_or_create(usuario=self.request.user)
-        alumno.cursos_inscriptos.add(curso)
+        form.instance.inscripcion = Curso.objects.get(pk=self.kwargs['curso_id'])
         return super().form_valid(form)
+
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['mi_formulario'] = context['form']  
         return context
+    
+class ListaConsultas(ListView):  
+    model = Alumno
+    template_name = 'CursosApp/consultas.html' 
+    context_object_name = 'consultas recibidas'
 

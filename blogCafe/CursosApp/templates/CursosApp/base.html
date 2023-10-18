@@ -50,6 +50,9 @@
                             {% if user_avatar %}
                             <img src="{{user_avatar}}" alt="" style="height: 40px;width: 40px; position: relative; left: 80px;">
                             {% endif %}
+                        {% endif %}                            
+                        {% if request.user.is_superuser %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'lista_consultas' %}">Consultas</a></li>
                         {% endif %}
 
                     </ul>

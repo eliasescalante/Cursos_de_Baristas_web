@@ -1,0 +1,18 @@
+{% extends "CursosApp/base.html" %}
+{% load static %}
+{% block section1 %}
+<br>
+<br>
+<br>
+<br>
+<h1>Lista de Consultas</h1>
+<ul>
+    {% for consulta in object_list %}
+        <li>Nombre: {{ consulta.nombre }} - Apellido: {{ consulta.apellido }} - Email: {{ consulta.email }}</li>
+        <li>Fecha de Nacimiento: {{ consulta.nacimiento }}</li>
+        <li>Gustos: {{ consulta.gustos }}</li>
+        <hr>
+    {% endfor %}
+</ul>
+
+{% endblock %}
