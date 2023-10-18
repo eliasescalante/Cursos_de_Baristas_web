@@ -50,6 +50,7 @@
 - Se puede observar el total de los cursos del blog. Y en cada uno de ellos poder ver la imagen del curso ademas de su informacion en detalle
 - en Cursos tambien podemos ver la seccion de comentarios con la posibilidad de comentar los cursos si estamos logeados.
 - Tambien en Cursos podemos realizar una consulta donde se puede enviar tus datos para que nos contactemos mas adelante para recibir info sobre el curso.
+- Con el usuario superuser podemos ver ademas la lista de consultas realizadas en la vista cursos para poder comunicarnos con las diferentes personas.
 - Haciendo login con un superuser (nombre: daniela, contraseña:daniela) podemos editar o eliminar los cursos desde la pagina sin necesidad de ingresar a /admin.
 
 ## Video demostracion
