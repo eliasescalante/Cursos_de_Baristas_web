@@ -28,6 +28,7 @@
 
 - vista comentarios
 - vista cursos
+- vista consultas
 - vista sobre nosotros
 - edicion estilo html y css
 
