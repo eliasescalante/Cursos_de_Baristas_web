@@ -85,17 +85,16 @@ def edit(request):
     usuario = request.user
 
     if request.method == 'POST':
-
         miFormulario = UserEditForm(request.POST, request.FILES)
 
         if miFormulario.is_valid():
-
             informacion = miFormulario.cleaned_data
 
             if informacion["password1"] != informacion["password2"]:
                 datos = {
                     'first_name': usuario.first_name,
-                    'email': usuario.email
+                    'email': usuario.email,
+                    'last_name': usuario.last_name
                 }
                 miFormulario = UserEditForm(initial=datos)
 
@@ -107,17 +106,25 @@ def edit(request):
                 usuario.first_name = informacion['first_name']
                 usuario.save()
 
-                
-                try:
-                    avatar = Imagen.objects.get(user=usuario)
-                except Imagen.DoesNotExist:
-                    avatar = Imagen(user=usuario, imagen=informacion["imagen"])
-                    avatar.save()
-                else:
-                    avatar.imagen = informacion["imagen"]
-                    avatar.save()
+                # modifique el codigo para que no almacene las imagenes si no que las reemplace
+                avatar, created = Imagen.objects.get_or_create(user=usuario)
+                avatar.imagen = informacion["imagen"]
+                avatar.save()
 
                 return render(request, "CursosApp/index.html")
+                #el codigo comentado no me funciona acumula las imagenes y me tira error porque me devuelve mas de una imagen.
+
+                
+                # try:
+                #     avatar = Imagen.objects.get(user=usuario)
+                # except Imagen.DoesNotExist:
+                #     avatar = Imagen(user=usuario, imagen=informacion["imagen"][0])
+                #     avatar.save()
+                # else:
+                #     avatar.imagen = informacion["imagen"]
+                #     avatar.save()
+
+                # return render(request, "CursosApp/index.html")
 
     else:
         datos = {
