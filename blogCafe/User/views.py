@@ -129,7 +129,8 @@ def edit(request):
     else:
         datos = {
             'first_name': usuario.first_name,
-            'email': usuario.email
+            'email': usuario.email,
+            'last_name': usuario.last_name
         }
         miFormulario = UserEditForm(initial=datos)
 
