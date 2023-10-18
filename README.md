@@ -12,7 +12,6 @@
  - vista del estudiante (edicion perfil)
  - vista creacion de usuario
  - avatar y usuario en el navbar
- - Vista cursos
 
 
  ### Daniela Erario:
@@ -20,7 +19,7 @@
 
 - logout
 - models
-- vista cursos
+- vista cursos (editar , ver detalle)
 - detalle cursos
 - edición cursos mediante superuser
 
@@ -29,7 +28,7 @@
 
 
 - vista comentarios
-- vista cursos
+- vista cursos (comentarios , consultas)
 - vista consultas
 - vista sobre nosotros
 - edicion estilo html y css
@@ -52,6 +51,7 @@
 - Tambien en Cursos podemos realizar una consulta donde se puede enviar tus datos para que nos contactemos mas adelante para recibir info sobre el curso.
 - Con el usuario superuser podemos ver ademas la lista de consultas realizadas en la vista cursos para poder comunicarnos con las diferentes personas.
 - Haciendo login con un superuser (nombre: daniela, contraseña:daniela) podemos editar o eliminar los cursos desde la pagina sin necesidad de ingresar a /admin.
+- tambien podemos crear cursos desde un superuser sin necesidad de ingresar al /admin.
 
 ## Video demostracion
 - link a definir
