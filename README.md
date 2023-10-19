@@ -54,4 +54,4 @@
 - tambien podemos crear cursos desde un superuser sin necesidad de ingresar al /admin.
 
 ## Video demostracion
-- link a definir
+- https://www.youtube.com/watch?v=NvHl3Y57P3Y
