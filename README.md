@@ -3,35 +3,8 @@
 -------
 ## **Comisión** : 47770
 -------
-## **Alumnos**:   
+## **Alumno**:   
 ### Escalante Elias:
-
-
- - esqueleto del proyecto, 
- - login, 
- - vista del estudiante (edicion perfil)
- - vista creacion de usuario
- - avatar y usuario en el navbar
-
-
- ### Daniela Erario:
-
-
-- logout
-- models
-- vista cursos (editar , ver detalle)
-- detalle cursos
-- edición cursos mediante superuser
-
-
- ### Francisco Mezas: 
-
-
-- vista comentarios
-- vista cursos (comentarios , consultas)
-- vista consultas
-- vista sobre nosotros
-- edicion estilo html y css
 
 
 --------
@@ -39,7 +12,7 @@
 ## Nombre del Proyecto: BlogCafe
 --------
 ## **Descripcion del Proyecto**:
- Realizamos un blog de Cafe, orientado a cursos sobre la preparacion de los diferentes estilos de Cafe que existen. En donde:
+ Realice un blog de Cafe, orientado a cursos sobre la preparacion de los diferentes estilos de Cafe que existen. En donde:
 
 
 - Es necesario logearse para poder navegar.
