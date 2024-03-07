@@ -26,5 +26,9 @@
 - Haciendo login con un superuser (nombre: daniela, contraseña:daniela) podemos editar o eliminar los cursos desde la pagina sin necesidad de ingresar a /admin.
 - tambien podemos crear cursos desde un superuser sin necesidad de ingresar al /admin.
 
+------
+![Texto alternativo](https://github.com/eliasescalante/Proyecto_cursos_cafe_entrega_final/blob/main/Capture.JPG)
+
+
 ## Video demostracion
 - https://www.youtube.com/watch?v=NvHl3Y57P3Y
