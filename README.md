@@ -26,6 +26,13 @@
 - Haciendo login con un superuser (nombre: daniela, contraseña:daniela) podemos editar o eliminar los cursos desde la pagina sin necesidad de ingresar a /admin.
 - tambien podemos crear cursos desde un superuser sin necesidad de ingresar al /admin.
 
+## Comentarios
+
+- Se utlizo Html/Css nativo para la interfaz.
+- Se utlizo bootstrap para el esqueleto de la web.
+- Para el backend se utlizo el framework DJANGO
+- Como base de datos se utlizo  SQlite.
+  
 ------
 ![Texto alternativo](https://github.com/eliasescalante/Proyecto_cursos_cafe_entrega_final/blob/main/Capture.JPG)
 
