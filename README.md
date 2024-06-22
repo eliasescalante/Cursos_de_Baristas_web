@@ -1,5 +1,5 @@
-# entregaFinal
-## Curso CoderHouse de python entrega trabajo final
+# ENTREGA FINAL 
+## Curso CoderHouse de Python / Django 
 -------
 ## **Comisión** : 47770
 -------
@@ -34,8 +34,10 @@
 - Como base de datos se utlizo  SQlite.
   
 ------
+
 ![Texto alternativo](https://github.com/eliasescalante/Proyecto_cursos_cafe_entrega_final/blob/main/Capture.JPG)
 
+----
 
 ## Video demostracion
 - https://www.youtube.com/watch?v=NvHl3Y57P3Y
