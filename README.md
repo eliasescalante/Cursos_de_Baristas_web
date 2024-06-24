@@ -31,11 +31,19 @@
 - Se utlizo Html/Css nativo para la interfaz.
 - Se utlizo bootstrap para el esqueleto de la web.
 - Para el backend se utlizo el framework DJANGO
-- Como base de datos se utlizo  SQlite.
+- Como base de datos se utlizo  SQlite. y se uso el ORM de Django para la comunicacion con la base de datos
+- Se utlizo el modelo MVT.
   
 ------
 
-![Texto alternativo](https://github.com/eliasescalante/Proyecto_cursos_cafe_entrega_final/blob/main/Capture.JPG)
+![Texto alternativo](https://github.com/eliasescalante/Cursos_de_Baristas_web/blob/main/img/Capture_2.JPG)
+![Texto alternativo](https://github.com/eliasescalante/Cursos_de_Baristas_web/blob/main/img/Capture_3.JPG)
+![Texto alternativo](https://github.com/eliasescalante/Cursos_de_Baristas_web/blob/main/img/Capture_4.JPG)
+![Texto alternativo](https://github.com/eliasescalante/Cursos_de_Baristas_web/blob/main/img/Capture_6.JPG)
+![Texto alternativo](https://github.com/eliasescalante/Cursos_de_Baristas_web/blob/main/img/Capture_7.JPG)
+![Texto alternativo](https://github.com/eliasescalante/Cursos_de_Baristas_web/blob/main/img/Capture_5.JPG)
+![Texto alternativo](https://github.com/eliasescalante/Cursos_de_Baristas_web/blob/main/img/Capture.JPG)
+
 
 ----
 
