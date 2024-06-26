@@ -49,3 +49,14 @@
 
 ## Video demostracion
 - https://www.youtube.com/watch?v=NvHl3Y57P3Y
+
+----
+
+![GitHub repo size](https://img.shields.io/github/repo-size/eliasescalante/Cursos_de_Baristas_web
+)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/eliasescalante/Cursos_de_Baristas_web
+)
+![GitHub last commit](https://img.shields.io/github/last-commit/eliasescalante/Cursos_de_Baristas_web
+)
+
+----
