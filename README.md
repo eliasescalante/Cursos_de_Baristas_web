@@ -5,7 +5,6 @@
 -------
 ## **Alumno**:   
 ### Escalante Elias:
-
 ----
 ## Deploy del proyecto:  http://web-production-86a0.up.railway.app
 ----
